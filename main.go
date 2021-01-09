@@ -32,7 +32,7 @@ func articleIndex(c echo.Context) error {
 		Title: "Article Index",
 		Text:  "index!",
 	}
-	return c.Render(http.StatusOK, "article/index.html", m)
+	return c.Render(http.StatusOK, "index", m)
 }
 
 // articleNew
@@ -41,8 +41,7 @@ func articleNew(c echo.Context) error {
 		Title: "Article New",
 		Text:  "New!",
 	}
-
-	return c.Render(http.StatusOK, "article/new.html", m)
+	return c.Render(http.StatusOK, "new", m)
 }
 
 // articleShow
@@ -55,7 +54,7 @@ func articleShow(c echo.Context) error {
 		ID:    id,
 	}
 
-	return c.Render(http.StatusOK, "article/show.html", m)
+	return c.Render(http.StatusOK, "show", m)
 }
 
 // articleEdit ...
@@ -68,7 +67,7 @@ func articleEdit(c echo.Context) error {
 		ID:    id,
 	}
 
-	return c.Render(http.StatusOK, "article/edit.html", m)
+	return c.Render(http.StatusOK, "edit", m)
 }
 
 func main() {
@@ -79,7 +78,7 @@ func main() {
 	e.GET("/edit/:id", articleEdit)
 
 	t := &Template{
-		templates: template.Must(template.ParseGlob("./article/*.html")),
+		templates: template.Must(template.ParseGlob("./article/*index.html")),
 	}
 	e.Renderer = t
 
