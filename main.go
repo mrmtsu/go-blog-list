@@ -78,7 +78,7 @@ func main() {
 	e.GET("/edit/:id", articleEdit)
 
 	t := &Template{
-		templates: template.Must(template.ParseGlob("./article/*index.html")),
+		templates: template.Must(template.ParseGlob("./article/*.html")),
 	}
 	e.Renderer = t
 
