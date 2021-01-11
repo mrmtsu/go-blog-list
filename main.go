@@ -32,7 +32,7 @@ func articleIndex(c echo.Context) error {
 		Title: "Article Index",
 		Text:  "index!",
 	}
-	return c.Render(http.StatusOK, "layout", m)
+	return c.Render(http.StatusOK, "index", m)
 }
 
 // articleNew
